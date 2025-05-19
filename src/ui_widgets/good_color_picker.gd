@@ -1,6 +1,6 @@
-extends VBoxContainer
+class_name GoodColorPicker extends VBoxContainer
 
-const EyedropperPopupScene = preload("res://src/ui_parts/eyedropper_popup.tscn")
+var EyedropperPopupScene: PackedScene = load("res://src/ui_parts/eyedropper_popup.tscn")
 
 const handle_texture = preload("res://assets/icons/BWHandle.svg")
 const slider_arrow = preload("res://assets/icons/SliderArrow.svg")
@@ -155,8 +155,9 @@ func _ready() -> void:
 	RenderingServer.canvas_item_set_parent(color_wheel_surface,
 			color_wheel_drawn.get_canvas_item())
 
-func _exit_tree() -> void:
-	RenderingServer.free_rid(color_wheel_surface)
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_PREDELETE:
+		RenderingServer.free_rid(color_wheel_surface)
 
 
 func _on_slider_mode_changed() -> void:

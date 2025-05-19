@@ -1,8 +1,5 @@
 # A popup for picking a color.
-extends PanelContainer
-
-const GoodColorPicker = preload("res://src/ui_widgets/good_color_picker.gd")
-const ColorSwatch = preload("res://src/ui_widgets/color_swatch.gd")
+class_name ColorFieldPopup extends PanelContainer
 
 # Useful here, because it avoids the Palette validation.
 class MockPalette:
@@ -19,7 +16,7 @@ class MockPalette:
 # If the currentColor keyword is available, but uninteresting, don't show it.
 enum CurrentColorAvailability {UNAVAILABLE, UNINTERESTING, INTERESTING}
 
-const ColorSwatchScene = preload("res://src/ui_widgets/color_swatch.tscn")
+var ColorSwatchScene: PackedScene = load("res://src/ui_widgets/color_swatch.tscn")
 
 signal color_picked(new_color: String, final: bool)
 var is_none_keyword_available := false

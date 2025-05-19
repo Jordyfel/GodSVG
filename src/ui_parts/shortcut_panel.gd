@@ -1,4 +1,4 @@
-extends PanelContainer
+class_name ShortcutPanel extends PanelContainer
 
 enum Layout {HORIZONTAL_STRIP, HORIZONTAL_TWO_ROWS, VERTICAL_STRIP}
 
@@ -9,7 +9,7 @@ static func get_preset_value_text_map() -> Dictionary:
 		Layout.HORIZONTAL_TWO_ROWS: Translator.translate("Horizontal with two rows"),
 	}
 
-const ShortcutPanelConfigScene = preload("res://src/ui_parts/shortcut_panel_config.tscn")
+var ShortcutPanelConfigScene: PackedScene = load("res://src/ui_parts/shortcut_panel_config.tscn")
 
 const dot_pattern = preload("res://assets/icons/DotPatternSegment.svg")
 const config_icon = preload("res://assets/icons/Config.svg")

@@ -1,4 +1,4 @@
-extends Button
+class_name ColorSwatch extends Button
 
 const bounds = Vector2(2, 2)
 

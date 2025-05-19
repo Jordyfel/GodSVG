@@ -1,5 +1,5 @@
 # A number editor, not tied to any attribute.
-extends BetterLineEdit
+class_name NumberEdit extends BetterLineEdit
 
 @export var min_value := 0.0:
 	set(new_value):

@@ -1,5 +1,5 @@
 # A dropdown with multiple options, not tied to any attribute.
-extends HBoxContainer
+class_name Dropdown extends HBoxContainer
 
 @export var values: Array[Variant]
 @export var disabled_values: Array[Variant]  # References values.

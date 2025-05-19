@@ -1,8 +1,5 @@
 class_name SaveData extends ConfigResource
 
-const GoodColorPicker = preload("res://src/ui_widgets/good_color_picker.gd")
-const ShortcutPanel = preload("res://src/ui_parts/shortcut_panel.gd")
-
 var _palette_validities: Dictionary[String, bool] = {}
 var _shortcut_validities: Dictionary[Key, bool] = {}
 

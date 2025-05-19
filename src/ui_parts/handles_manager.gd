@@ -1,5 +1,5 @@
 # This script manages contour drawing and handles.
-extends Control
+class_name HandlesManager extends Control
 
 var normal_handle_textures: Dictionary[Handle.Display, Texture2D]
 var hovered_handle_textures: Dictionary[Handle.Display, Texture2D]
@@ -24,9 +24,10 @@ var selected_color: Color
 var hovered_selected_color: Color
 
 
-func _exit_tree() -> void:
-	RenderingServer.free_rid(surface)
-	RenderingServer.free_rid(selections_surface)
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_PREDELETE:
+		RenderingServer.free_rid(surface)
+		RenderingServer.free_rid(selections_surface)
 
 # Generate the procedural handle textures.
 func render_handle_textures() -> void:

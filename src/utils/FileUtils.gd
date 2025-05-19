@@ -4,12 +4,10 @@ class_name FileUtils extends RefCounted
 enum FileState {SAME, DIFFERENT, DOES_NOT_EXIST}
 enum TabCloseMode {SINGLE, TO_LEFT, TO_RIGHT, ALL_OTHERS}
 
-const GoodFileDialog = preload("res://src/ui_parts/good_file_dialog.gd")
-
-const AlertDialogScene = preload("res://src/ui_widgets/alert_dialog.tscn")
-const OptionsDialogScene = preload("res://src/ui_widgets/options_dialog.tscn")
-const ImportWarningMenuScene = preload("res://src/ui_parts/import_warning_menu.tscn")
-const GoodFileDialogScene = preload("res://src/ui_parts/good_file_dialog.tscn")
+static var AlertDialogScene: PackedScene = load("res://src/ui_widgets/alert_dialog.tscn")
+static var OptionsDialogScene: PackedScene = load("res://src/ui_widgets/options_dialog.tscn")
+static var ImportWarningMenuScene: PackedScene = load("res://src/ui_parts/import_warning_menu.tscn")
+static var GoodFileDialogScene: PackedScene = load("res://src/ui_parts/good_file_dialog.tscn")
 
 static func reset_svg() -> void:
 	var file_path := Configs.savedata.get_active_tab().svg_file_path

@@ -1,10 +1,10 @@
 extends PanelContainer
 
-const PaletteConfigWidgetScene = preload("res://src/ui_widgets/palette_config.tscn")
-const ShortcutConfigWidgetScene = preload("res://src/ui_widgets/setting_shortcut.tscn")
-const ShortcutShowcaseWidgetScene = preload("res://src/ui_widgets/presented_shortcut.tscn")
-const SettingFrameScene = preload("res://src/ui_widgets/setting_frame.tscn")
-const ProfileFrameScene = preload("res://src/ui_widgets/profile_frame.tscn")
+var PaletteConfigWidgetScene: PackedScene = load("res://src/ui_widgets/palette_config.tscn")
+var ShortcutConfigWidgetScene: PackedScene = load("res://src/ui_widgets/setting_shortcut.tscn")
+var ShortcutShowcaseWidgetScene: PackedScene = load("res://src/ui_widgets/presented_shortcut.tscn")
+var SettingFrameScene: PackedScene = load("res://src/ui_widgets/setting_frame.tscn")
+var ProfileFrameScene: PackedScene = load("res://src/ui_widgets/profile_frame.tscn")
 
 const plus_icon = preload("res://assets/icons/Plus.svg")
 const import_icon = preload("res://assets/icons/Import.svg")

@@ -1,6 +1,6 @@
 extends Control
 
-const PreviewRectScene = preload("res://src/ui_widgets/preview_rect.tscn")
+var PreviewRectScene: PackedScene = load("res://src/ui_widgets/preview_rect.tscn")
 
 const plus_icon = preload("res://assets/icons/Plus.svg")
 const close_icon = preload("res://assets/icons/Close.svg")

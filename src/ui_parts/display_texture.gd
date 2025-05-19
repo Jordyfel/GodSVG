@@ -1,4 +1,4 @@
-extends TextureRect
+class_name DisplayTexture extends TextureRect
 
 var view_rect := Rect2():
 	set(new_value):

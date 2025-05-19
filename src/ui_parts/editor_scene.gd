@@ -1,10 +1,10 @@
 extends HBoxContainer
 
-const MacMenuScene = preload("res://src/ui_parts/mac_menu.tscn")
-const GlobalActionsScene = preload("res://src/ui_parts/global_actions.tscn")
-const CodeEditorScene = preload("res://src/ui_parts/code_editor.tscn")
-const InspectorScene = preload("res://src/ui_parts/inspector.tscn")
-const ViewportScene = preload("res://src/ui_parts/display.tscn")
+var MacMenuScene: PackedScene = load("res://src/ui_parts/mac_menu.tscn")
+var GlobalActionsScene: PackedScene = load("res://src/ui_parts/global_actions.tscn")
+var CodeEditorScene: PackedScene = load("res://src/ui_parts/code_editor.tscn")
+var InspectorScene: PackedScene = load("res://src/ui_parts/inspector.tscn")
+var ViewportScene: PackedScene = load("res://src/ui_parts/display.tscn")
 
 @onready var panel_container: PanelContainer = $PanelContainer
 

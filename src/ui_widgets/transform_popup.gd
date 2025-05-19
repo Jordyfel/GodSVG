@@ -1,10 +1,8 @@
 # A popup for editing a transform list.
 extends PanelContainer
 
-const NumberEdit = preload("res://src/ui_widgets/number_edit.gd")
-
-const MiniNumberFieldScene = preload("res://src/ui_widgets/mini_number_field.tscn")
-const TransformEditorScene = preload("res://src/ui_widgets/transform_editor.tscn")
+var MiniNumberFieldScene: PackedScene = load("res://src/ui_widgets/mini_number_field.tscn")
+var TransformEditorScene: PackedScene = load("res://src/ui_widgets/transform_editor.tscn")
 
 const _icons_dict: Dictionary[String, Texture2D] = {
 	"matrix": preload("res://assets/icons/Matrix.svg"),

@@ -1,9 +1,9 @@
 # A fallback file dialog, always used if the native file dialog is not available.
-extends PanelContainer
+class_name GoodFileDialog extends PanelContainer
 
-const ChooseNameDialogScene = preload("res://src/ui_widgets/choose_name_dialog.tscn")
-const ConfirmDialogScene = preload("res://src/ui_widgets/confirm_dialog.tscn")
-const AlertDialogScene = preload("res://src/ui_widgets/alert_dialog.tscn")
+var ChooseNameDialogScene: PackedScene = load("res://src/ui_widgets/choose_name_dialog.tscn")
+var ConfirmDialogScene: PackedScene = load("res://src/ui_widgets/confirm_dialog.tscn")
+var AlertDialogScene: PackedScene = load("res://src/ui_widgets/alert_dialog.tscn")
 
 signal file_selected(path: String)
 

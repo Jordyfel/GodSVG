@@ -1,8 +1,6 @@
 extends HBoxContainer
 
-const LayoutPopup = preload("res://src/ui_parts/layout_popup.gd")
-
-const LayoutPopupScene = preload("res://src/ui_parts/layout_popup.tscn")
+var LayoutPopupScene: PackedScene = load("res://src/ui_parts/layout_popup.tscn")
 
 @onready var more_options: Button = $LeftSide/MoreOptions
 @onready var size_button: Button = $RightSide/SizeButton

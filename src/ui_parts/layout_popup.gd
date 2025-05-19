@@ -1,4 +1,4 @@
-extends Control
+class_name LayoutPopup extends Control
 
 # This popup is mainly just one node doing a lot of things. This helps with drag & drop
 # which can be defined only here. Buttons are used too, but just for graphics.

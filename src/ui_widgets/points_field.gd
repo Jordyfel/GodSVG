@@ -13,7 +13,7 @@ const STRIP_HEIGHT = 22.0
 
 signal focused
 
-const MiniNumberFieldScene = preload("mini_number_field.tscn")
+var MiniNumberFieldScene: PackedScene = load("mini_number_field.tscn")
 
 const more_icon = preload("res://assets/icons/SmallMore.svg")
 const plus_icon = preload("res://assets/icons/Plus.svg")

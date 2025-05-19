@@ -5,9 +5,9 @@ var type := Type.NONE
 
 signal value_changed
 
-const ColorEditScene = preload("res://src/ui_widgets/color_edit.tscn")
-const DropdownScene = preload("res://src/ui_widgets/dropdown.tscn")
-const NumberDropdownScene = preload("res://src/ui_widgets/number_dropdown.tscn")
+var ColorEditScene: PackedScene = load("res://src/ui_widgets/color_edit.tscn")
+var DropdownScene: PackedScene = load("res://src/ui_widgets/dropdown.tscn")
+var NumberDropdownScene: PackedScene = load("res://src/ui_widgets/number_dropdown.tscn")
 
 var getter: Callable
 var setter: Callable

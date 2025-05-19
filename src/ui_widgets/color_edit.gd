@@ -1,9 +1,7 @@
 # A color editor, not tied to any attribute.
 extends LineEditButton
 
-const ColorEditPopup = preload("res://src/ui_widgets/color_edit_popup.gd")
-
-const ColorEditPopupScene = preload("res://src/ui_widgets/color_edit_popup.tscn")
+var ColorEditPopupScene: PackedScene = load("res://src/ui_widgets/color_edit_popup.tscn")
 const checkerboard = preload("res://assets/icons/backgrounds/ColorButtonBG.svg")
 
 var color_picker: ColorEditPopup

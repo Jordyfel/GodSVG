@@ -1,11 +1,8 @@
 extends PanelContainer
 
-const Dropdown = preload("res://src/ui_widgets/dropdown.gd")
-const ShortcutPanel = preload("res://src/ui_parts/shortcut_panel.gd")
-
 const clear_icon = preload("res://assets/icons/Clear.svg")
 
-const DropdownScene = preload("res://src/ui_widgets/dropdown.tscn")
+var DropdownScene: PackedScene = load("res://src/ui_widgets/dropdown.tscn")
 
 @onready var close_button: Button = $VBoxContainer/CloseButton
 @onready var slot_container: VBoxContainer = %SlotContainer

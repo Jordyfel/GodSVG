@@ -1,13 +1,13 @@
 extends Node
 
-const AlertDialogScene = preload("res://src/ui_widgets/alert_dialog.tscn")
-const ConfirmDialogScene = preload("res://src/ui_widgets/confirm_dialog.tscn")
-const SettingsMenuScene = preload("res://src/ui_parts/settings_menu.tscn")
-const AboutMenuScene = preload("res://src/ui_parts/about_menu.tscn")
-const DonateMenuScene = preload("res://src/ui_parts/donate_menu.tscn")
-const UpdateMenuScene = preload("res://src/ui_parts/update_menu.tscn")
-const ExportMenuScene = preload("res://src/ui_parts/export_menu.tscn")
-const ShortcutPanelScene = preload("res://src/ui_parts/shortcut_panel.tscn")
+var AlertDialogScene: PackedScene = load("res://src/ui_widgets/alert_dialog.tscn")
+var ConfirmDialogScene: PackedScene = load("res://src/ui_widgets/confirm_dialog.tscn")
+var SettingsMenuScene: PackedScene = load("res://src/ui_parts/settings_menu.tscn")
+var AboutMenuScene: PackedScene = load("res://src/ui_parts/about_menu.tscn")
+var DonateMenuScene: PackedScene = load("res://src/ui_parts/donate_menu.tscn")
+var UpdateMenuScene: PackedScene = load("res://src/ui_parts/update_menu.tscn")
+var ExportMenuScene: PackedScene = load("res://src/ui_parts/export_menu.tscn")
+var ShortcutPanelScene: PackedScene = load("res://src/ui_parts/shortcut_panel.tscn")
 
 # Menus should be added with add_menu() and removed by being freed.
 # To add them as modals that don't hide the previous one, use add_dialog().

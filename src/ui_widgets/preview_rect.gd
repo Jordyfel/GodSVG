@@ -1,4 +1,4 @@
-extends CenterContainer
+class_name PreviewRect extends CenterContainer
 
 const MAX_IMAGE_DIMENSION = 512
 

@@ -1,9 +1,9 @@
-extends Button
+class_name ColorSwatchConfig extends Button
 
 const checkerboard = preload("res://assets/icons/backgrounds/Checkerboard.svg")
 const gear_icon = preload("res://assets/icons/GearOutlined.svg")
 
-const ColorSwatchScene = preload("res://src/ui_widgets/color_swatch.tscn")
+var ColorSwatchScene: PackedScene = load("res://src/ui_widgets/color_swatch.tscn")
 
 var palette: Palette
 var idx := -1  # Index inside the palette.
@@ -15,9 +15,6 @@ func _ready() -> void:
 	tooltip_text = "lmofa"  # TODO: Remove this when #101550 is fixed.
 	RenderingServer.canvas_item_set_parent(surface, get_canvas_item())
 	RenderingServer.canvas_item_set_z_index(surface, 1)
-
-func _exit_tree() -> void:
-	RenderingServer.free_rid(surface)
 
 func _draw() -> void:
 	if idx >= palette.get_color_count():
@@ -96,6 +93,8 @@ func _notification(what: int) -> void:
 		modulate = Color(1, 1, 1)
 		queue_redraw()
 
+	elif what == NOTIFICATION_PREDELETE:
+		RenderingServer.free_rid(surface)
 
 # For configuration swatches.
 func change_color_name(new_name: String) -> void:

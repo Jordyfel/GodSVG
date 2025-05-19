@@ -35,8 +35,9 @@ func _ready() -> void:
 	focus_exited.connect(_on_base_class_focus_exited)
 	caret_changed.connect(queue_redraw_caret)
 
-func _exit_tree() -> void:
-	RenderingServer.free_rid(_surface)
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_PREDELETE:
+		RenderingServer.free_rid(_surface)
 
 # Workaround for there not being a built-in overtype_mode_changed signal.
 var overtype_mode := false

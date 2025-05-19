@@ -1,7 +1,5 @@
 extends VBoxContainer
 
-const NumberEdit = preload("res://src/ui_widgets/number_edit.gd")
-
 @onready var viewport: SubViewport = %Viewport
 @onready var reference_texture: TextureRect = %Viewport/ReferenceTexture
 @onready var reference_button: Button = %LeftMenu/Reference

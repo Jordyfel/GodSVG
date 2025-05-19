@@ -1,8 +1,6 @@
 # An editor to be tied to a color attribute.
 extends LineEditButton
 
-const ColorFieldPopup = preload("res://src/ui_widgets/color_field_popup.gd")
-
 var element: Element
 var attribute_name: String:  # May propagate.
 	set(new_value):
@@ -15,8 +13,8 @@ var cached_allow_url: bool
 var cached_allow_none: bool
 var cached_allow_current_color: bool
 
-const ColorFieldPopupScene = preload("res://src/ui_widgets/color_field_popup.tscn")
-const checkerboard = preload("res://assets/icons/backgrounds/ColorButtonBG.svg")
+var ColorFieldPopupScene: PackedScene = load("res://src/ui_widgets/color_field_popup.tscn")
+var checkerboard = load("res://assets/icons/backgrounds/ColorButtonBG.svg")
 
 var color_popup: ColorFieldPopup
 var gradient_texture: GradientTexture2D

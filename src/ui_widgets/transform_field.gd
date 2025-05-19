@@ -4,7 +4,7 @@ extends LineEditButton
 var element: Element
 var attribute_name: String  # Never propagates.
 
-const TransformPopupScene = preload("res://src/ui_widgets/transform_popup.tscn")
+var TransformPopupScene: PackedScene = load("res://src/ui_widgets/transform_popup.tscn")
 
 func set_value(new_value: String, save := false) -> void:
 	element.set_attribute(attribute_name, new_value)

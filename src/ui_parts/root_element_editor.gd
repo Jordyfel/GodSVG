@@ -1,7 +1,5 @@
 extends VBoxContainer
 
-const NumberEdit = preload("res://src/ui_widgets/number_edit.gd")
-
 # So, about this editor. Width and height don't have default values, so they use NAN and
 # use NumberEdit, rather than NumberField. Viewbox is a list and it also doesn't have a
 # default value, so it uses 4 NumberEdits.

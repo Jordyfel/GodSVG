@@ -1,8 +1,8 @@
 # This singleton handles information that's session-wide, but not saved.
 extends Node
 
-const OptionsDialogScene = preload("res://src/ui_widgets/options_dialog.tscn")
-const PathCommandPopupScene = preload("res://src/ui_widgets/path_popup.tscn")
+var OptionsDialogScene: PackedScene = load("res://src/ui_widgets/options_dialog.tscn")
+var PathCommandPopupScene: PackedScene = load("res://src/ui_widgets/path_popup.tscn")
 
 
 signal svg_unknown_change

@@ -1,12 +1,12 @@
 class_name AttributeFieldBuilder
 
-const TransformFieldScene = preload("res://src/ui_widgets/transform_field.tscn")
-const NumberFieldScene = preload("res://src/ui_widgets/number_field.tscn")
-const NumberSliderScene = preload("res://src/ui_widgets/number_field_with_slider.tscn")
-const ColorFieldScene = preload("res://src/ui_widgets/color_field.tscn")
-const EnumFieldScene = preload("res://src/ui_widgets/enum_field.tscn")
-const IdFieldScene = preload("res://src/ui_widgets/id_field.tscn")
-const UnrecognizedFieldScene = preload("res://src/ui_widgets/unrecognized_field.tscn")
+static var TransformFieldScene: PackedScene = preload("res://src/ui_widgets/transform_field.tscn")
+static var NumberFieldScene: PackedScene = preload("res://src/ui_widgets/number_field.tscn")
+static var NumberSliderScene: PackedScene = preload("res://src/ui_widgets/number_field_with_slider.tscn")
+static var ColorFieldScene: PackedScene = preload("res://src/ui_widgets/color_field.tscn")
+static var EnumFieldScene: PackedScene = preload("res://src/ui_widgets/enum_field.tscn")
+static var IdFieldScene: PackedScene = preload("res://src/ui_widgets/id_field.tscn")
+static var UnrecognizedFieldScene: PackedScene = preload("res://src/ui_widgets/unrecognized_field.tscn")
 
 static func create(attribute: String, element: Element) -> Control:
 	match DB.get_attribute_type(attribute):

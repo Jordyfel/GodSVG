@@ -1,8 +1,8 @@
-extends PanelContainer
+class_name ColorEditPopup extends PanelContainer
 
 # The popup from color edits shouldn't access the palettes, so it's simpler.
 
-const GoodColorPickerScene = preload("res://src/ui_widgets/good_color_picker.tscn")
+var GoodColorPickerScene: PackedScene = load("res://src/ui_widgets/good_color_picker.tscn")
 
 @onready var margin_container: MarginContainer = $MarginContainer
 

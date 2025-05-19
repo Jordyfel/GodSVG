@@ -1,4 +1,4 @@
-extends Control
+class_name Camera extends Control
 
 const ticks_interval = 4
 
@@ -29,8 +29,9 @@ func _ready() -> void:
 	State.show_grid_changed.connect(update_show_grid)
 	update_show_grid()
 
-func exit_tree() -> void:
-	RenderingServer.free_rid(surface)
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_PREDELETE:
+		RenderingServer.free_rid(surface)
 
 func change_zoom() -> void:
 	zoom = State.zoom

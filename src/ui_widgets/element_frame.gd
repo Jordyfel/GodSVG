@@ -2,22 +2,22 @@ extends VTitledPanel
 
 const warning_icon = preload("res://assets/icons/Warning.svg")
 
-const element_content_types: Dictionary[String, PackedScene] = {
-	"path": preload("res://src/ui_widgets/element_content_path.tscn"),
-	"polygon": preload("res://src/ui_widgets/element_content_polyshape.tscn"),
-	"polyline": preload("res://src/ui_widgets/element_content_polyshape.tscn"),
-	"circle": preload("res://src/ui_widgets/element_content_basic_shape.tscn"),
-	"ellipse": preload("res://src/ui_widgets/element_content_basic_shape.tscn"),
-	"rect": preload("res://src/ui_widgets/element_content_basic_shape.tscn"),
-	"line": preload("res://src/ui_widgets/element_content_basic_shape.tscn"),
-	"stop": preload("res://src/ui_widgets/element_content_stop.tscn"),
-	"g": preload("res://src/ui_widgets/element_content_g.tscn"),
-	"svg": preload("res://src/ui_widgets/element_content_g.tscn"),
-	"linearGradient": preload("res://src/ui_widgets/element_content_linear_gradient.tscn"),
-	"radialGradient": preload("res://src/ui_widgets/element_content_radial_gradient.tscn"),
+var element_content_types: Dictionary[String, PackedScene] = {
+	"path": load("res://src/ui_widgets/element_content_path.tscn"),
+	"polygon": load("res://src/ui_widgets/element_content_polyshape.tscn"),
+	"polyline": load("res://src/ui_widgets/element_content_polyshape.tscn"),
+	"circle": load("res://src/ui_widgets/element_content_basic_shape.tscn"),
+	"ellipse": load("res://src/ui_widgets/element_content_basic_shape.tscn"),
+	"rect": load("res://src/ui_widgets/element_content_basic_shape.tscn"),
+	"line": load("res://src/ui_widgets/element_content_basic_shape.tscn"),
+	"stop": load("res://src/ui_widgets/element_content_stop.tscn"),
+	"g": load("res://src/ui_widgets/element_content_g.tscn"),
+	"svg": load("res://src/ui_widgets/element_content_g.tscn"),
+	"linearGradient": load("res://src/ui_widgets/element_content_linear_gradient.tscn"),
+	"radialGradient": load("res://src/ui_widgets/element_content_radial_gradient.tscn"),
 }
-const ElementContentUnrecognizedScene =\
-		preload("res://src/ui_widgets/element_content_unrecognized.tscn")
+var ElementContentUnrecognizedScene: PackedScene =\
+		load("res://src/ui_widgets/element_content_unrecognized.tscn")
 
 @onready var main_container: VBoxContainer = $MainContainer
 @onready var title_bar: Control = $TitleBar
@@ -77,8 +77,9 @@ func _ready() -> void:
 		for xnode_editor in XNodeChildrenBuilder.create(element):
 			child_xnodes_container.add_child(xnode_editor)
 
-func _exit_tree() -> void:
-	RenderingServer.free_rid(surface)
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_PREDELETE:
+		RenderingServer.free_rid(surface)
 
 # Logic for dragging.
 func _get_drag_data(_at_position: Vector2) -> Variant:

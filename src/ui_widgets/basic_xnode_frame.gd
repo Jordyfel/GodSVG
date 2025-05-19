@@ -23,8 +23,9 @@ func _ready() -> void:
 	text_edit.text_changed.connect(_on_text_modified)
 	text_edit.initialize_text(xnode.get_text())
 
-func _exit_tree() -> void:
-	RenderingServer.free_rid(surface)
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_PREDELETE:
+		RenderingServer.free_rid(surface)
 
 # Logic for dragging.
 func _get_drag_data(_at_position: Vector2) -> Variant:

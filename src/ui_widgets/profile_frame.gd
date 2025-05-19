@@ -1,11 +1,9 @@
 # This is similar to SettingFrame, but specifically for dropdowns without a default value.
 extends Control
 
-const Dropdown = preload("res://src/ui_widgets/dropdown.gd")
-
 signal value_changed
 
-const DropdownScene = preload("res://src/ui_widgets/dropdown.tscn")
+var DropdownScene: PackedScene = load("res://src/ui_widgets/dropdown.tscn")
 
 var getter: Callable
 var setter: Callable
